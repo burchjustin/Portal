@@ -1,0 +1,30 @@
+/*
+  The below will make any Section that is named in the format of "hidden..." hidden by default.
+  As opposed to on-load JavaScript to hide, this has the advantage of allowing you to quickly
+  hide entire groups of fields without worrying whether or not the user will see the field or 
+  label while the page is loading. It's a convenient way to hide various sections without needing
+  to constantly update your stylesheet.
+
+  Note that this will NOT hide the Section title, so it works best in Sections where the label is
+  hidden at the form level.
+
+  Some browsers may indicate this can slow performance, as it matches on a wildcard. I haven't
+  personally found any issues, but YMMV.
+*/
+table[data-name*='hidden'] {
+    display: none;
+}
+
+/*
+  The following works the same as above, but would hide entire Tabs. Title/Label similarly an issue.
+*/
+div[data-name*='hidden'] {
+    display: none;
+}
+
+/*
+  Or just use this to enable for both :)
+*/
+[data-name*='hidden'] {
+    display: none;
+}
